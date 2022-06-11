@@ -1,5 +1,6 @@
 {
   "name": "taiyaki",
+  "productName": "Taiyaki",
   "version": "1.0.0",
   "description": "taiyaki is split screen app. it relocates the position of windows and chnages size of windows.",
   "main": "src/main.js",
