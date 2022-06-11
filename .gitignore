@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+#electron
+dist/
+
 # Logs
 logs
 *.log
