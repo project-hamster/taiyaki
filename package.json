@@ -8,6 +8,11 @@
     "start": "electron .",
     "build": "electron-builder build"
   },
+  "build": {
+    "directories": {
+      "buildResources": "build-resource"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yuuki-yamaguchi/taiyaki.git"
