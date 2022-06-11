@@ -1,0 +1,19 @@
+{
+  "name": "taiyaki",
+  "version": "1.0.0",
+  "description": "taiyaki is split screen app. it relocates the position of windows and chnages size of windows.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuuki-yamaguchi/taiyaki.git"
+  },
+  "author": "yuuki yamaguchi",
+  "devDependencies": {
+    "electron": "^19.0.4",
+    "electron-builder": "^23.0.3"
+  }
+}
