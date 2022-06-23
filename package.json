@@ -12,6 +12,9 @@
     "directories": {
       "buildResources": "build-resource"
     },
+    "files": [
+      "src/"
+    ],
     "mac": {
       "extendInfo": {
         "LSUIElement": true
