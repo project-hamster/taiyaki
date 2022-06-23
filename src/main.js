@@ -1,5 +1,8 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Tray, Menu, nativeImage } = require('electron');
 const path = require('path');
+
+let tray;
+
 
 if (require('electron-squirrel-startup')) {
   app.quit();
@@ -14,7 +17,22 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 };
 
-app.on('ready', createWindow);
+const createMenuBar = () => {
+  let icon = nativeImage.createFromPath(path.join(__dirname, 'images/taiyaki.png'));
+  icon = icon.resize({height:18,width:18});
+
+  tray = new Tray(icon);
+
+  const contextMenu = Menu.buildFromTemplate([
+  ]);
+  
+  tray.setContextMenu(contextMenu);
+}
+
+app.on('ready', () => {
+  createWindow();
+  createMenuBar();
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
