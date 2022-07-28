@@ -1,6 +1,6 @@
-const { app, BrowserWindow, Tray, Menu, nativeImage } = require('electron');
+const { app, BrowserWindow, Tray, Menu, nativeImage, globalShortcut } = require('electron');
+const {exec} = require('child_process');
 const path = require('path');
-
 let tray;
 
 
@@ -32,6 +32,14 @@ const createMenuBar = () => {
 app.on('ready', () => {
   createWindow();
   createMenuBar();
+
+  globalShortcut.register('Command+Right', ()=>{
+    exec('osascript -l JavaScript ./src/change-window-size.js', (err, stdout, stderr)=>{
+      if(err){
+        console.log(`stderr: ${stderr}`);
+      }
+    });
+  });
 });
 
 app.on('window-all-closed', () => {
