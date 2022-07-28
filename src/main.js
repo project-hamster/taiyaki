@@ -24,6 +24,8 @@ const createMenuBar = () => {
   tray = new Tray(icon);
 
   const contextMenu = Menu.buildFromTemplate([
+    {label:'終了', type:'normal', role:'quit'},
+    {label:'ヘルプ', type:'normal', role:'help'}
   ]);
   
   tray.setContextMenu(contextMenu);
