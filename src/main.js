@@ -34,7 +34,11 @@ app.on('ready', () => {
   createMenuBar();
 
   globalShortcut.register('Command+Right', ()=>{
-    exec('osascript -l JavaScript ./src/change-window-size.js', (err, stdout, stderr)=>{
+    let x = 200;
+    let y = 300;
+    let height = 300;
+    let width = 500;
+    exec(`osascript -l JavaScript ./src/change-window-size.js ${x} ${y} ${height} ${width}`, (err, stdout, stderr)=>{
       if(err){
         console.log(`stderr: ${stderr}`);
       }
