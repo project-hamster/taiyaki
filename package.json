@@ -23,9 +23,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yuuki-yamaguchi/taiyaki.git"
+    "url": "git+https://github.com/project-hamster/taiyaki.git"
   },
-  "author": "yuuki yamaguchi",
+  "author": "project-hamster",
   "devDependencies": {
     "electron": "^19.0.4",
     "electron-builder": "^23.0.3"

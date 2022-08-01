@@ -8,13 +8,12 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
-const createWindow = () => {
-  const mainWindow = new BrowserWindow({
-    width: 600,
-    height: 400,
-    resizable: false
+const createWindow = (file_name, width, height) => {
+  const window = new BrowserWindow({
+    width: width,
+    height: height
   });
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  window.loadFile(path.join(__dirname, file_name));
 };
 
 const createMenuBar = () => {
@@ -24,6 +23,8 @@ const createMenuBar = () => {
   tray = new Tray(icon);
 
   const contextMenu = Menu.buildFromTemplate([
+    {label:'終了', type:'normal', role:'quit'},
+    {label:'ヘルプ', type:'normal', role:'help', click: ()=>{createWindow('help.html', 600, 700)}}
   ]);
   
   tray.setContextMenu(contextMenu);
@@ -38,7 +39,6 @@ const relocateWindow = (x, y, height, width) => {
 }
 
 app.on('ready', () => {
-  createWindow();
   createMenuBar();
 
   // ここからショートカットキーの定義
